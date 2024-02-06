@@ -1,0 +1,12 @@
+<div class="temp" style="background-image: url(./assets/db.jpg)" >
+<div class="card" style="width: 560px;margin: auto; box-shadow: 0 0  50px black ">
+  <img src="{{'data:image/jpg;base64,' +Blogs.img}}" class="card-img-top" alt="...">
+      <div style="color: rgb(0, 0, 0);background-color: aliceblue;" class="card-body">
+      <p class="card-text" style="background-color:   rgb(211, 226, 239);border-width: 2px;border-radius: 10px;"><strong>Author: </strong>{{ Blogs.author }}</p>
+      <p class="card-text" style="background-color:  rgb(211, 226, 239);border-width: 2px;border-radius: 10px;"><strong>Title: </strong> {{ Blogs.title }}</p>
+      <p class="card-text" style="background-color:   rgb(211, 226, 239);border-width: 2px;border-radius: 10px;"><strong>Content: </strong> {{ Blogs.content }}</p>
+      <p class="card-text" style="background-color:   rgb(211, 226, 239);border-width: 2px;border-radius: 10px;"><strong>Description: </strong> {{ Blogs.description }}</p>
+      <p class="card-text" style="background-color:   rgb(211, 226, 239);border-width: 2px;border-radius: 10px;"><strong>PublishedAt: </strong> {{ Blogs.dob }}</p>
+      <a routerLink="/dashboard" class="btn btn-primary" >Go Back</a>
+    </div>
+  </div>

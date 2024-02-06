@@ -1,0 +1,36 @@
+<div class="temp" style="background-image: url(./assets/db.jpg)">
+  <h1 style="color: aliceblue;margin-left: 75px;">Registration</h1>
+  <form (ngSubmit)="onSubmit(reg.value)" #reg="ngForm" style="background-color: aliceblue; width: 500px;  margin-left: 350px; box-shadow: 0 0 70px black;justify-content: center;">
+            <b>
+              <label style="margin: 10px; margin-right:  10px;padding: 10px;">username</label>
+            </b>
+            <input type="text"  style="color: black;" name="username" ngModel  required=""/>
+            <br>
+            <b>
+              <label style="margin: 10px; margin-right:  10px;padding: 10px;">first name</label>
+            </b>
+            <input type="text" style="color: black;" name="fName" ngModel required="" />
+            <br>
+            <b>
+              <label style="margin: 10px; margin-right:  12px;padding: 10px;">last name</label>
+            </b>
+            <input type="text"  style="color: black;" name="lName" ngModel required="" />
+            <br>
+            <b>
+              <label style="margin: 10px; margin-right:  12px;padding: 10px;">password</label>
+            </b>
+            <input type="password"  style="color: black;" name="password" ngModel required="" />
+            <br>
+            <b>
+              <label style="margin: 10px; margin-right:  25px;padding: 10px;">confirm</label>
+            </b>
+            <input type="password"  style="color: black;" name="cnfrmpassword" ngModel required="" />
+            <br>
+            <b>
+              <label style="margin: 10px; margin-right:  40px;padding: 10px;">email</label>
+            </b>
+            <input type="text"  style="color: black;" name="email" ngModel required="" />
+            <br>
+            <input style="color: black;" type="submit">
+  </form>
+  </div>

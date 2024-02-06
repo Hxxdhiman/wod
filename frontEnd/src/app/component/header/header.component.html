@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark" >
+  <div class="container-fluid" style="background-color: black ; height:50px ;">
+    <a class="navbar-brand" routerLink="" (click)="gotodashboard()" >
+        <img src="./assets/logo.png" style="margin-top: 3px;height: 25px;width: 25px;" class="d-inline-block align-text-top">
+        StackBlogs
+      </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav  me-auto mb-2 mb-lg-0">
+        <li class="nav-item" >
+          <a *ngIf="isloggedin()" class="nav-link active" aria-current="page" routerLink="dashboard">Home</a>
+        </li>
+        <li class="nav-item">
+          <a *ngIf="isloggedin()" class="nav-link active" routerLink="favourite">Favourite</a>
+        </li>
+        <li class="nav-item" >
+          <a *ngIf="isloggedin()" class="nav-link active" aria-current="page" routerLink="blogs-module">Add Blogs</a>
+        </li>
+        <li>
+          <button *ngIf="isloggedin()" style="margin-left: 1100%;margin-right: 10%; border-radius: 20px;border-color: rgb(43, 138, 183); border-width: 2px;background-color: rgb(24, 23, 21);" (click)="logoutUser()" routerLink="login">logout</button>
+        </li>
+        <!-- <li class="nav-item" style="margin-left: 850px;">
+          <a class="nav-link active" routerLink="#">Login</a>
+        </li> -->
+      </ul>
+      <div>
+        <!-- <button *ngIf="isloggedin()" style="margin: 0px;background-color: black; padding: 0px;" type="button" (click)="toggleVisibility()">
+          <img class="temp" src="./assets/1.png" style="height: 35px; width: 40px;margin-left: 0px;" />
+        </button> -->
+
+      </div>
+    </div>
+  </div>
+</nav>

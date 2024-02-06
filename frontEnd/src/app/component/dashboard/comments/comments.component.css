@@ -1,0 +1,58 @@
+
+  *{
+    border-radius: 10px;
+  }
+  .container {
+      margin: 10px 10px;
+      padding: 10px 10px;
+      background-color: #3d3c3c;
+      border-radius: 5px;
+      text-align: center;
+    }
+    .news-container {
+      display: inline-flex;
+    }
+  
+    .news-card {
+      width: 300px;
+      height: auto;
+      margin: 10px 10px;
+      background-color: #f8f9f9;
+    }
+    .comment-card {
+      width: 550px;
+      height: fit-content;
+      background-color: #f8f9f9;
+    }
+    .course-card {
+      width: 220px;
+      height: 320px;
+      margin: 10px 10px;
+      background-color: #484f4f;
+    }
+  
+    .news-buttons {
+      display: flex;
+    }
+    .btn {
+      width: 140px;
+      height: 30px;
+      border: none;
+      margin: 5px 3px;
+    }
+  
+    .btn-read {
+      background-color: #ec7063;
+    }
+    .btn-detail {
+      background-color: #abebc6;
+    }
+    .btn-comment{
+      background-color: burlywood;
+    }
+    .placeholder{
+      width: 450px;
+      padding: 51px 15px;
+      background-color: white;  
+    }
+    

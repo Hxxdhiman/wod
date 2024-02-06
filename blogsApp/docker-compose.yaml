@@ -1,0 +1,61 @@
+version: "3.9"
+services:
+  my-sql-service:
+    image: mysql:latest
+    ports:
+      - "3366:3306"
+    container_name: my-sql-container
+    networks:
+      - host
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USERNAME: root
+      MYSQL_PASSWORD: root
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+      MYSQL_DATABASE: user
+
+  mongo-service:
+    image: mongo:latest
+    container_name: mongo-container
+    networks:
+      - host
+    ports:
+      - "27017:27017"
+
+  harsh-dashboard:
+    container_name: dashboard-container
+    networks:
+      - host
+    image: dashboard
+    ports:
+      - "8085:8085"
+    depends_on:
+      - mongo-service
+    restart: always
+
+  harsh-login:
+    container_name: login-container
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://my-sql-service:3306/user
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
+    networks:
+      - host
+    image: login
+    ports:
+      - "8083:8083"
+    depends_on:
+      - my-sql-service
+    restart: always
+
+  angular-blog:
+    image: angular
+    networks:
+      - host
+    container_name: angular-blog-container
+    ports:
+      - "8081:80"
+
+networks:
+  host:
+    driver: bridge

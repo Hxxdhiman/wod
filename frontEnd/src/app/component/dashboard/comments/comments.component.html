@@ -1,0 +1,42 @@
+<div class="temp" style="background-image: url(./assets/db.jpg)" >
+<div class="card" style="width: 560px; margin: auto;background-color: aliceblue;box-shadow: 0 0  50px black">
+    <img src="{{'data:image/jpg;base64,' +Blogs.img}}" class="card-img-top" alt="...">
+    <div class="card-body" style="color:black;background-color:aliceblue;box-shadow: 0 0  50px black">
+      <p class="card-text"><strong>Author: </strong>{{ Blogs.author }}</p>
+      <p class="card-text"><strong>Title: </strong> {{ Blogs.title }}</p>
+      <p class="card-text"><strong>Content: </strong> {{ Blogs.content }}</p>
+      <p class="card-text"><strong>PublishedAt: </strong> {{ Blogs.dob}}</p>
+</div>
+
+<div>
+  <div>
+    <button (click)="showComment()" style="box-shadow: 0 0  5px;color: black;background-color: rgb(230, 146, 137);margin: 10px;">{{nameCom}}</button>
+  </div>
+  <div *ngIf="isAllow()">
+
+  <ng-container *ngFor="let com of comm" >
+    <div class="news-container">
+        <div class="news-card" style="background-color: rgb(156, 207, 252); box-shadow: 0 0  5px black">
+            <div class="card-body">
+            <p class="card-text" style="color: rgb(0, 0, 0);">
+              <b style="font-size: 12px;"> {{com.commentUsername}} :: </b>
+              <b style="font-family:cursive;font-size: 12px;">{{com.comment}}</b>
+            </p>
+            </div>
+    </div> 
+  </div> 
+  </ng-container>
+</div>
+  <form class="comment-card" style="margin: 10px;padding: 10px; background-color: rgb(156, 207, 252);box-shadow: 0 0  20px black" #blogForm="ngForm">
+            <p style="color: black;" name="commentUsername" [(ngModel)]="comme.commentUsername"></p>
+            <br>
+            <label style="color: rgb(0, 0, 0); margin-right: 5px;">Enter your comment</label>
+            <input type="text" (blur)="onChangeFileField($event)" name="comment" [(ngModel)]="comme.comment"/>
+            <button type="submit" style="color: black;background-color:rgb(161, 195, 224);box-shadow: 0 0  5px black;float:right" (click)="addComm()">add comment</button>
+            <br>
+            <div>
+            <br>
+            <button (click)="routerIt()" style="color: black;background-color:  rgb(161, 195, 224);margin-left: 430px;box-shadow: 0 0  5px black" >Go Back</button>
+            </div> 
+  </form>
+</div>

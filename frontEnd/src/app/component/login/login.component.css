@@ -1,0 +1,23 @@
+/* button{
+    justify-content: center;
+} */
+*{
+    text-align: center;
+    border-radius: 10px;
+    border-width: 2px;
+    border-color: #0a58ca;
+    margin: 2px;
+    padding: 2px;
+}
+.card-title{
+    padding: 1px;
+    margin-bottom: 50px;
+    margin-top: 0px ;
+}
+.temp{
+    margin: 0px;
+    padding: 0px;
+    border-radius: 0px;
+    border-width: 0px;
+    height: 500px;
+  }

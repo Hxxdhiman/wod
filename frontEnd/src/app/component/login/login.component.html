@@ -1,0 +1,25 @@
+<div class="temp" style="background-image: url(./assets/db.jpg)">
+  <div >
+    <h1 style="color: white;padding: 20px;margin-top: 0px;margin-left: 8px;">Login into StackBlogs</h1>
+
+<div class="card" style="width: 35%; height:auto; margin: auto; background-color:  aliceblue; color: rgb(0, 0, 0); box-shadow: 0 0  40px rgb(0, 0, 0);border-radius: 30px;border-color: #0a58ca; ">
+    <div class="card-body" style="margin-top: 60px;margin-bottom: 60px; ">
+      <form (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+          <label style="margin-left: 0px;" for="username" class="form-label"><b>Username</b></label>
+          <input type="text" style="color: black;" name="username" [(ngModel)]="credentials.username"/>
+        </div>
+        <div class="mb-3">
+          <label style="margin-left: 4px;" for="password" class="form-label"><b>Password</b></label>
+          <input type="password" style="color: black;" name="password" [(ngModel)]="credentials.password"/>
+        </div> 
+          <button style="color: black; border-width: 2px; background-color: rgb(239, 236, 236); justify-content: center;" type="submit" class="btn btn-primary">Login</button>
+        <div>
+          <h6>Don't have an account? <a routerLink="/register">register</a></h6>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+</div>
+  
