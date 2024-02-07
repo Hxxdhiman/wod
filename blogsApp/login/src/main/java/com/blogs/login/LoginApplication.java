@@ -10,7 +10,6 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @SpringBootApplication
-@EnableDiscoveryClient
 public class LoginApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(LoginApplication.class, args);
