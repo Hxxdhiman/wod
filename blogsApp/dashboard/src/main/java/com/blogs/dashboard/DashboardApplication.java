@@ -11,15 +11,5 @@ public class DashboardApplication {
 		SpringApplication.run(DashboardApplication.class, args);
 		System.out.println("DashBoard is running");
 	}
-//	@Bean
-//	public FilterRegistrationBean getFilter() {
-//
-//		FilterRegistrationBean filterReg= new FilterRegistrationBean();
-//		filterReg.setFilter(new filter());
-////		filterReg.addUrlPatterns("/dashboard/addBlogs");
-////		filterReg.addUrlPatterns("/dashboard/showBlogs");
-//		filterReg.addUrlPatterns("/dashboard/addComment/{vId}");
-//		filterReg.addUrlPatterns("/dashboard/getComments/{vId}");
-//		return filterReg;
-//	}
+
 }
