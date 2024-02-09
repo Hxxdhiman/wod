@@ -55,4 +55,8 @@
       padding: 51px 15px;
       background-color: white;  
     }
+    .temp{
+      height: 100%;
+      min-height:500x;
+    }
     

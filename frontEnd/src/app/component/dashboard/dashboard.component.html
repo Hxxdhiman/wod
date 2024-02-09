@@ -1,4 +1,4 @@
-  <div style="background-image: url(./assets/db.jpg);">
+  <div class="temp" style="background-image: url(./assets/db.jpg);">
   <div class="container" style=" width :80%; margin: auto;">
     <h1><b style="color: white;border-radius: 10px;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-weight: bold;">Today's Blogs</b></h1>
     <ng-container *ngFor="let blog of Blogs" >
@@ -20,7 +20,17 @@
                     <button class="btn btn-watch" (click)="addToWatchLater(blog.id)">Later</button>
                 </div>
             </div>
-        </div>  
+        </div>           
     </ng-container>
+    
 </div>
-
+<!-- Filter Dropdown -->
+<div class="dropdown">
+    <button class="dropbtn">Filter</button>
+    <div class="dropdown-content">
+      <a href="#" class="filter-option" data-filter="genre">Genre</a>
+      <a href="#" class="filter-option" data-filter="country">Country</a>
+      <a href="#" class="filter-option" data-filter="latest">Latest</a>
+      <a href="#" class="filter-option" data-filter="author">Author Name</a>
+    </div>
+  </div>

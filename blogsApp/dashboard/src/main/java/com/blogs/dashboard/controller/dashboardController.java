@@ -19,7 +19,6 @@ public class dashboardController
 {
     @Autowired
     dashboardService service;
-    @CrossOrigin(allowedHeaders ="*",origins="http://localhost:4200")
     @GetMapping("/showBlogs")
     public ResponseEntity<?> shoB()
     {

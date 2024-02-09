@@ -6,8 +6,8 @@ import { Component, NgModule, OnInit, ViewChild } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 
 import { Router, RouterModule, RouterOutlet } from '@angular/router';
-import { register } from '../../model/register';
-import { RegsiterSerService } from '../../services/regsiter-ser.service';
+import { register } from '../../model/blogger/register';
+import { loginService } from '../../services/login.service';
  
 @Component({
 
@@ -25,14 +25,14 @@ import { RegsiterSerService } from '../../services/regsiter-ser.service';
 
 export class RegistrationComponent{
   @ViewChild('registartion') reg: NgForm;
-  constructor(private regSer:RegsiterSerService,private router:Router){}
+  constructor(private logSer:loginService,private router:Router){}
   onSubmit(reg:register)
   {
     console.log(reg)
     console.log(reg.username)
     if(reg.cnfrmPassword!="" && reg.email!="" && reg.fName!="" && reg.lName!="" && reg.username!="" && reg.password!="")
     {
-      this.regSer.registerUser(reg).subscribe(data=>{
+      this.logSer.registerUser(reg).subscribe(data=>{
         alert("User registered successfully")
         this.router.navigate(["/dashboard"])
       },error=>alert("user is not registered")

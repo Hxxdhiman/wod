@@ -3,8 +3,8 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { Router, RouterModule, RouterOutlet } from '@angular/router';
 import { blogger } from '../../../model/blogger/blogger';
-import { BlogsService } from '../../../services/blogs.service';
 import { v4 as uuid } from 'uuid';
+import { dashboardService } from '../../../services/dashboard.service';
 
 @Component({
   selector: 'app-blogs-module',
@@ -19,7 +19,7 @@ export class BlogsModuleComponent implements OnInit{
   ngOnInit(){
 
   }
-  constructor(private serv:BlogsService,private router:Router){
+  constructor(private dashSer:dashboardService,private router:Router){
 
   }
   generateAutoId(): string {
@@ -49,7 +49,7 @@ console.log(this.base64textString);
   addBlog()
   {
     this.blog.img=this.base64textString;
-    this.serv.postUserData(this.blog).subscribe({
+    this.dashSer.postUserData(this.blog).subscribe({
       next:(response)=>{
         console.log(response)
         alert("done")

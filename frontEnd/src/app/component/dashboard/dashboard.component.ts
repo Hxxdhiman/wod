@@ -1,11 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 import { RouterLink, RouterModule } from '@angular/router';
-import { AddService } from '../../services/add.service';
-import { BlogsService} from '../../services/blogs.service';
-import { ShowBlogsService } from '../../services/show-blogs.service';
 import { blogger } from '../../model/blogger/blogger';
-import { WatchLaterService } from '../../services/watch-later.service';
+import { dashboardService } from '../../services/dashboard.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -16,11 +13,11 @@ import { WatchLaterService } from '../../services/watch-later.service';
 })
 export class DashboardComponent {
   
-  constructor(private _blogser: BlogsService, private _addser: AddService,private blogss:ShowBlogsService,private watchLater:WatchLaterService) {}
+  constructor(private dashSer: dashboardService) {}
   Blogs:blogger[]=[];
   userName:string=localStorage.getItem('userName')
   ngOnInit(): void {
-    this.blogss.getBlogs().subscribe({
+    this.dashSer.getBlogs().subscribe({
       next: (response) => {
         this.Blogs=response
         console.log(this.Blogs);
@@ -34,7 +31,7 @@ export class DashboardComponent {
   
   addToWatchLater(blogId:any)
   {
-    this.watchLater.addToReadLater(this.userName,blogId).subscribe(
+    this.dashSer.addToReadLater(this.userName,blogId).subscribe(
       user=>{
         console.log(user)
         alert('added to read later')

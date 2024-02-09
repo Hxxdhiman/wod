@@ -1,8 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
-import { AddService } from '../../services/add.service';
-import { WatchLaterService } from '../../services/watch-later.service';
+import { dashboardService } from '../../services/dashboard.service';
 
 @Component({
   selector: 'app-favourite',
@@ -12,13 +11,13 @@ import { WatchLaterService } from '../../services/watch-later.service';
   styleUrl: './favourite.component.css'
 })
 export class FavouriteComponent {
-  constructor(private _addser: AddService,private watchlater:WatchLaterService,private router:Router) {}
+  constructor(private dashSer: dashboardService,private router:Router) {}
   Blogs:any;
   BlogsId:any;
   Bloging:any[]=[]
   userName:string=localStorage.getItem('userName')
   ngOnInit(): void {
-    this.watchlater.showFav(localStorage.getItem("userName")).subscribe(
+    this.dashSer.showFav(localStorage.getItem("userName")).subscribe(
       user=>{
         console.log(user)
         this.Blogs=user
@@ -31,7 +30,7 @@ export class FavouriteComponent {
   }
   removeFav(id:any)
   {
-    this.watchlater.removeFav(this.userName,id).subscribe(
+    this.dashSer.removeFav(this.userName,id).subscribe(
       user=>{
         console.log(user)
         window.location.reload()

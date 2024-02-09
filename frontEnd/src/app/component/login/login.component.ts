@@ -1,9 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
-import { AuthServService } from '../../services/auth.service';
 import { FormsModule } from '@angular/forms';
-import { JwtServiceService } from '../../services/jwt-service.service';
+import { loginService } from '../../services/login.service';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +15,7 @@ export class LoginComponent {
   credentials={
     username:"",password:""
   }
-  constructor(private jwtSer:JwtServiceService,private router:Router){
+  constructor(private logSer:loginService,private router:Router){
   }
   temo:boolean=true;
   checkStatus(d1:string)
@@ -32,11 +31,11 @@ export class LoginComponent {
     if((this.credentials.username!='' && this.credentials.password!='') && (this.credentials.username!=null && this.credentials.password))
     {
       console.log("Login ready to send data to server")
-      this.jwtSer.generateToken(this.credentials).subscribe(
+      this.logSer.generateToken(this.credentials).subscribe(
         (response:any)=>{
           console.log(response.token)
-          this.jwtSer.storeUsername(this.credentials.username)
-          this.jwtSer.loginUser(response.token)
+          this.logSer.storeUsername(this.credentials.username)
+          this.logSer.loginUser(response.token)
           this.router.navigate(["/dashboard"])
         },
         error=>{

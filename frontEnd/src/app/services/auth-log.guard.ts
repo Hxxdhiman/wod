@@ -1,8 +1,8 @@
 import { CanActivateFn, Router } from '@angular/router';
-import { JwtServiceService } from './jwt-service.service';
 import { inject } from '@angular/core';
+import { loginService } from './login.service';
 export const authLogGuard: CanActivateFn = (route, state) => {
-  const jwtSer:JwtServiceService=inject(JwtServiceService)
+  const jwtSer:loginService=inject(loginService)
   const router:Router=inject(Router);
   if(jwtSer.isLoggedIn())
   {

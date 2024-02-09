@@ -19,7 +19,7 @@
     text-align: center;
     color: white;
     border-radius: 100px;
-    width:100px;
+    width:100%;
     /* border-width: 100px; */
     justify-content:center;
     margin-left: 500px;
@@ -29,5 +29,6 @@
     padding: 0px;
     border-radius: 0px;
     border-width: 0px;
-    height: 700px;
+    height: 100%;
+    min-height: 500px;
   } 

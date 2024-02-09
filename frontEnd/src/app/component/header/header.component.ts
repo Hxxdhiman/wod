@@ -1,11 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
-import { AddService } from '../../services/add.service';
-import { AuthServService } from '../../services/auth.service';
-import { BlogsService } from '../../services/blogs.service';
-import { JwtServiceService } from '../../services/jwt-service.service';
 import { FormsModule } from '@angular/forms';
+import { loginService } from '../../services/login.service';
 
 @Component({
   selector: 'app-header',
@@ -15,7 +12,7 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent implements OnInit {
-  constructor(private _blogser: BlogsService, private _addser: AddService,private temp:AuthServService,private jwtser:JwtServiceService,private router:Router) {}
+  constructor(private router:Router,private logSer:loginService) {}
   public loggedIn=false;
   isVisible = false;
   toggleVisibility() {
@@ -23,21 +20,17 @@ export class HeaderComponent implements OnInit {
 
   }
   ngOnInit(): void {
-    this.loggedIn=this.jwtser.isLoggedIn()
+    this.loggedIn=this.logSer.isLoggedIn()
   }
   logoutUser()
   {
-    this.jwtser.logout()
+    this.logSer.logout()
     location.reload()
     this.router.navigate([''])
   }
-  toggleVis() {
-    this.isVisible = false;
-    this.temp.logout();
-  }
   isloggedin()
   {
-    return this.loggedIn=this.jwtser.isLoggedIn()
+    return this.loggedIn=this.logSer.isLoggedIn()
   }
   gotodashboard()
   {

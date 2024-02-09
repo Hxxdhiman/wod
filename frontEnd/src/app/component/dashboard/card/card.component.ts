@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterModule} from '@angular/router';
-import { BlogsService} from '../../../services/blogs.service';
-import { ShowBlogsService } from '../../../services/show-blogs.service';
+import { dashboardService } from '../../../services/dashboard.service';
+
 
 @Component({
   selector: 'app-card',
@@ -14,13 +14,13 @@ import { ShowBlogsService } from '../../../services/show-blogs.service';
 })
 export class CardComponent implements OnInit{
 
-  constructor(private _blogser: BlogsService, private activeRoute : ActivatedRoute,private showB:ShowBlogsService) {}
+  constructor(private dashSer:dashboardService, private activeRoute : ActivatedRoute) {}
 
   Blogss : any;
   Blogs : any;
   BlogsId : any;  
   ngOnInit(): void {
-    this.showB.getBlogs().subscribe(
+    this.dashSer.getBlogs().subscribe(
       user=>{
         this.Blogss=user
         this.BlogsId=this.activeRoute.snapshot.params['id'];

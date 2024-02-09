@@ -1,8 +1,9 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark" >
-  <div class="container-fluid" style="background-color: black ; height:50px ;">
+  <div class="container-fluid" style="height:50px ;">
     <a class="navbar-brand" routerLink="" (click)="gotodashboard()" >
         <img src="./assets/logo.png" style="margin-top: 3px;height: 25px;width: 25px;" class="d-inline-block align-text-top">
-        StackBlogs
+        <a style="color: black;margin-left: 1%;">StackBlogs
+        </a>
       </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -10,16 +11,16 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav  me-auto mb-2 mb-lg-0">
         <li class="nav-item" >
-          <a *ngIf="isloggedin()" class="nav-link active" aria-current="page" routerLink="dashboard">Home</a>
+          <a *ngIf="isloggedin()" style="color: black;" class="nav-link active" aria-current="page" routerLink="dashboard">Home</a>
         </li>
         <li class="nav-item">
-          <a *ngIf="isloggedin()" class="nav-link active" routerLink="favourite">Favourite</a>
+          <a *ngIf="isloggedin()" style="color: black;" class="nav-link active" routerLink="favourite">Favourite</a>
         </li>
         <li class="nav-item" >
-          <a *ngIf="isloggedin()" class="nav-link active" aria-current="page" routerLink="blogs-module">Add Blogs</a>
+          <a *ngIf="isloggedin()" style="color: black;" class="nav-link active" aria-current="page" routerLink="blogs-module">Add Blogs</a>
         </li>
         <li>
-          <button *ngIf="isloggedin()" style="margin-left: 1100%;margin-right: 10%; border-radius: 20px;border-color: rgb(43, 138, 183); border-width: 2px;background-color: rgb(24, 23, 21);" (click)="logoutUser()" routerLink="login">logout</button>
+          <button *ngIf="isloggedin()" style="margin-left: 1000%;margin-right: 10%; border-radius: 20px;border-color: rgb(43, 138, 183); border-width: 2px;background-color: white;color: black;" (click)="logoutUser()" routerLink="login">logout</button>
         </li>
         <!-- <li class="nav-item" style="margin-left: 850px;">
           <a class="nav-link active" routerLink="#">Login</a>
@@ -33,4 +34,26 @@
       </div>
     </div>
   </div>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Profile Dropdown</title>
+</head>
+<body>
+
+<header>
+  <div class="dropdown">
+    <button class="dropbtn">My Profile</button>
+    <div class="dropdown-content">
+      <a href="#">My Blogs</a>
+      <a href="#">Edit Profile</a>
+    </div>
+  </div>
+</header>
+
+</body>
+</html>
+
 </nav>

@@ -1,11 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, RouterModule, RouterOutlet } from '@angular/router';
-import { AddService } from '../../../services/add.service';
-import { BlogsService } from '../../../services/blogs.service';
+import { dashboardService } from '../../../services/dashboard.service';
 import { comment } from '../../../model/blogger/comment';
 import { FormsModule } from '@angular/forms';
-import { ShowBlogsService } from '../../../services/show-blogs.service';
 import { v4 as uuid } from 'uuid';
 
 @Component({
@@ -25,15 +23,15 @@ export class CommentsComponent implements OnInit{
   noCommInfo:string=""
   nameCom:string="show previous comments?"
   commentAccess:boolean=false
-  constructor(private _blogser: BlogsService, private activeRoute : ActivatedRoute,private addser :AddService,private showB:ShowBlogsService,private router:Router) {}
+  constructor(private dashSer: dashboardService, private activeRoute : ActivatedRoute,private router:Router) {}
   ngOnInit(): void {
-    this.showB.getBlogs().subscribe(
+    this.dashSer.getBlogs().subscribe(
       (user) => {
         this.Blogss = user;
         this.BlogsId = this.activeRoute.snapshot.params['id'];
         this.Blogs = this.Blogss.find((x) => x.id == this.BlogsId);
         console.log(this.Blogs);
-        this.addser.showComments(this.BlogsId).subscribe(
+        this.dashSer.showComments(this.BlogsId).subscribe(
           (user) => {
             console.log(user);
             this.comm = user;
@@ -79,7 +77,7 @@ export class CommentsComponent implements OnInit{
   }
   addComm()
   {
-    this.addser.addComments(this.comme).subscribe({
+    this.dashSer.addComments(this.comme).subscribe({
       next:(response)=>{
         console.log(response)
       },
@@ -91,7 +89,7 @@ export class CommentsComponent implements OnInit{
         console.log("request is completed");
       }
     })
-    this.addser.showComments(this.BlogsId).subscribe(
+    this.dashSer.showComments(this.BlogsId).subscribe(
       user=>{
         console.log(user)
         this.comm=user
