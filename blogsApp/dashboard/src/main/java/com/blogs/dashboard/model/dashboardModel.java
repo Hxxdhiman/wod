@@ -16,6 +16,34 @@ public class dashboardModel {
    private String dob;
    private byte[] img;
    private List<String> userName;
+   private String approved ="false";
+
+   public dashboardModel(String id, String author, String description, String title, String content, String dob, byte[] img, List<String> userName, String approved) {
+      this.id = id;
+      this.author = author;
+      this.description = description;
+      this.title = title;
+      this.content = content;
+      this.dob = dob;
+      this.img = img;
+      this.userName = userName;
+      this.approved = approved;
+   }
+
+   @Override
+   public String toString() {
+      return "dashboardModel{" +
+              "id='" + id + '\'' +
+              ", author='" + author + '\'' +
+              ", description='" + description + '\'' +
+              ", title='" + title + '\'' +
+              ", content='" + content + '\'' +
+              ", dob='" + dob + '\'' +
+              ", img=" + Arrays.toString(img) +
+              ", userName=" + userName +
+              ", approved=" + approved +
+              '}';
+   }
 
    public dashboardModel() {
       super();
@@ -39,31 +67,6 @@ public class dashboardModel {
    @Override
    protected void finalize() throws Throwable {
       super.finalize();
-   }
-
-   @Override
-   public String toString() {
-      return "dashboardModel{" +
-              "id='" + id + '\'' +
-              ", author='" + author + '\'' +
-              ", description='" + description + '\'' +
-              ", title='" + title + '\'' +
-              ", content='" + content + '\'' +
-              ", dob='" + dob + '\'' +
-              ", img=" + Arrays.toString(img) +
-              ", userName=" + userName +
-              '}';
-   }
-
-   public dashboardModel(String id, String author, String description, String title, String content, String dob, byte[] img, List<String> userName) {
-      this.id = id;
-      this.author = author;
-      this.description = description;
-      this.title = title;
-      this.content = content;
-      this.dob = dob;
-      this.img = img;
-      this.userName = userName;
    }
 
    public String getId() {
@@ -128,5 +131,13 @@ public class dashboardModel {
 
    public void setUserName(List<String> userName) {
       this.userName = userName;
+   }
+
+   public String isApproved() {
+      return approved;
+   }
+
+   public void setApproved(String approved) {
+      this.approved = approved;
    }
 }

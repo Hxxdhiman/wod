@@ -13,5 +13,5 @@ public interface loginInterfaceService {
 
     public loginModel addRegister(loginModel model);
 
-    public Map<String, String> getToken(loginModel model);
+    public Map<String, String> getToken(loginModel model,String temp);
 }

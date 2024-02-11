@@ -1,36 +1,35 @@
-<div class="temp" style="background-image: url(./assets/db.jpg)">
-  <h1 style="color: aliceblue;margin-left: 6%;">Registration</h1>
-  <form (ngSubmit)="onSubmit(reg.value)" #reg="ngForm" style="background-color: aliceblue; width: 63%;  margin-left: 20%; box-shadow: 0 0 70px black;justify-content: center;">
-            <b>
-              <label style="margin: 1%; margin-right:  10px;padding: 10px;">username</label>
-            </b>
-            <input type="text"  style="color: black;" name="username" ngModel  required=""/>
-            <br>
-            <b>
-              <label style="margin: 1%; margin-right:  10px;padding: 10px;">first name</label>
-            </b>
-            <input type="text" style="color: black;" name="fName" ngModel required="" />
-            <br>
-            <b>
-              <label style="margin: 1%; margin-right:  12px;padding: 10px;">last name</label>
-            </b>
-            <input type="text"  style="color: black;" name="lName" ngModel required="" />
-            <br>
-            <b>
-              <label style="margin: 1%; margin-right:  12px;padding: 10px;">password</label>
-            </b>
-            <input type="password"  style="color: black;" name="password" ngModel required="" />
-            <br>
-            <b>
-              <label style="margin: 1%; margin-right:  25px;padding: 10px;">confirm</label>
-            </b>
-            <input type="password"  style="color: black;" name="cnfrmpassword" ngModel required="" />
-            <br>
-            <b>
-              <label style="margin: 1%; margin-right:  40px;padding: 10px;">email</label>
-            </b>
-            <input type="text"  style="color: black;" name="email" ngModel required="" />
-            <br>
-            <input style="color: black;" type="submit">
-  </form>
-  </div>
+<div class="background-image" style="background-image: url(./assets/db.jpg)">  
+    <div class="register-container">
+      <h2>Register</h2>
+      <form (ngSubmit)="onSubmit(reg.value)" #reg="ngForm">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" ngModel required="" placeholder="Enter your username">
+        </div>
+        <div class="form-group">
+          <label for="fName">first name</label>
+          <input type="text" name="fName" ngModel required="" placeholder="Enter firstName">
+        </div>
+        <div class="form-group">
+          <label for="lName">last name</label>
+          <input type="text" name="lName" ngModel required="" placeholder="Enter lastname">
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" ngModel required="" placeholder="Enter your password">
+        </div>
+        <div class="form-group">
+          <label for="cnfrmpassword">confirm password</label>
+          <input type="password" name="cnfrmpassword" ngModel required="" placeholder="Confirm password again">
+        </div> 
+        <div class="form-group">
+          <label for="email">email</label>
+          <input type="text" name="email" ngModel required="" placeholder="Enter mail">
+        </div>   
+        <button type="submit">Submit</button>
+        <div class="register-option">
+          <span>already had account? <a href="#" routerLink="/login">Login</a></span>
+        </div>
+      </form>
+    </div>
+   </div>

@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, RouterModule} from '@angular/router';
+import { ActivatedRoute, Router, RouterModule} from '@angular/router';
 import { dashboardService } from '../../../services/dashboard.service';
 
 
@@ -14,7 +14,7 @@ import { dashboardService } from '../../../services/dashboard.service';
 })
 export class CardComponent implements OnInit{
 
-  constructor(private dashSer:dashboardService, private activeRoute : ActivatedRoute) {}
+  constructor(private dashSer:dashboardService, private activeRoute : ActivatedRoute,private router:Router) {}
 
   Blogss : any;
   Blogs : any;
@@ -31,6 +31,17 @@ export class CardComponent implements OnInit{
         console.log(error)
       }
     )
+  }
+  routeMe()
+  {
+    if(localStorage.getItem("admin")=="true")
+    {
+      this.router.navigate(["/blog-approval"])
+    }
+    else
+    {
+      this.router.navigate(["/dashboard"])
+    }
   }
   }
   

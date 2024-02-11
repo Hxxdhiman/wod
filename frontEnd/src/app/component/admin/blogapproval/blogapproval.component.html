@@ -1,9 +1,9 @@
 <div class="background-image" style="background-image: url(./assets/db.jpg)">
     <div class="container">
-        <h1 class="heading">Blogs you want to read later</h1>
+        <h1 class="heading">Blogs seeking approval</h1>
 
         <div class="heading" *ngIf="Blogs.length === 0;">
-            <p class="empty-message">There are no bookmarks.</p>
+            <p class="empty-message">No pending approvals</p>
         </div>
 
         <div class="news-container">
@@ -15,11 +15,13 @@
                 </div>
                 <div class="news-buttons">
                     <button class="btn btn-detail" routerLink="/card/{{ blog.id }}">Details</button>
-                    <button class="btn btn-remove" (click)="removeFav(blog.id)">Remove</button>
-                    <button class="btn" (click)="routerIt()">Go Back</button>
+                    <button class="btn btn-detail" (click)="acceptThis(blog.id)">Accept</button>
+                    <button class="btn btn-remove" (click)="removeThis(blog.id)">Remove</button>
 
                 </div>
             </div>
+            <button class="btn" (click)="routerIt()">Go Back</button>
+
         </div>
     </div>
 </div>

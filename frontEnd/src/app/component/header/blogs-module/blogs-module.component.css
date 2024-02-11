@@ -1,34 +1,30 @@
-/* *{
-    text-align: center;
-    padding: 10px;
-    margin: 10px;
-    color: rgb(14, 13, 13);
-    border-radius: 10px;
-    border-width: 5x;
-} */
-*{
-    text-align: center;
-    border-radius: 10px;
-    border-width: 5px;
-    margin: 2px;
-    padding: 2px;
-    border-width: 2px;
-    border-color: #0a58ca;
+.background-image {
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ensure the background image covers the entire viewport height */
+  }
+
+.temp {
+    padding: 50px 0;
+
 }
-.form-control{
-    text-align: center;
-    color: white;
+
+.form-control { 
     border-radius: 100px;
-    width:100%;
-    /* border-width: 100px; */
-    justify-content:center;
-    margin-left: 500px;
+
 }
-.temp{
-    margin: 0px;
-    padding: 0px;
-    border-radius: 0px;
-    border-width: 0px;
-    height: 100%;
-    min-height: 500px;
-  } 
+
+h1 {
+    color: white;
+
+}
+
+@media (max-width: 768px) {
+    .form-control {
+        width: auto;
+        margin-left: 0;
+    }
+}

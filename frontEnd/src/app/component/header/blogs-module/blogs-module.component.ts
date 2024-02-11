@@ -52,7 +52,7 @@ console.log(this.base64textString);
     this.dashSer.postUserData(this.blog).subscribe({
       next:(response)=>{
         console.log(response)
-        alert("done")
+        alert("Blog is successfully submitted !!! We will review and publish it")
         this.router.navigate(["/dashboard"])
       },
       error:(error)=>{

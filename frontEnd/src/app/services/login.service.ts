@@ -43,10 +43,29 @@ export class loginService {
       return true;
     }
   }
+  isAdmin(admin)
+  {
+    localStorage.setItem("admin",admin)
+    return true
+  }
+  temp:any;
+  findAdminn()
+  {
+    this.temp=localStorage.getItem("admin")
+    if(this.temp=="true")
+    {
+      return true
+    }
+    else
+    {
+      return false
+    }
+  }
 
   logout(){
     localStorage.removeItem('token');
     localStorage.removeItem("userName");
+    localStorage.removeItem("admin")
     this.router.navigate([''])
     return true;
   }

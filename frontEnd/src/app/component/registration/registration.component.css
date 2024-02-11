@@ -1,19 +1,81 @@
-*{
-  text-align: center;
-  padding: 10px;
-  margin: 2px;
-  color: rgb(0, 0, 0);
-  border-radius: 10px;
-  border-width: 5px;
-  border-width: 2px;
-  border-color: #0a58ca;
-
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
 }
-.temp{
-  margin: 0px;
-  padding: 0px;
-  border-radius: 0px;
-  border-width: 0px;
-  height: 100%;
-  min-height: 500px;
+
+.background-image {
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Ensure the background image covers the entire viewport height */
+}
+
+.register-container {
+  width: 90%;
+  max-width: 400px; /* Adjust max-width as needed */
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.register-container h2 {
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+.register-option {
+  text-align: center;
+}
+
+.register-option a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.register-option a:hover {
+  text-decoration: underline;
 }

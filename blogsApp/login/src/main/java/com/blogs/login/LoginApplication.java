@@ -14,5 +14,5 @@ public class LoginApplication {
 		SpringApplication.run(LoginApplication.class, args);
 		System.out.println("Running Login/Register Microservice");
 	}
-
+	
 }

@@ -14,6 +14,7 @@ public interface dashboardServiceInterface {
     public comment addComm(comment com);
 
     public List<comment> showCom(String vId);
+    public List<dashboardModel> showAdminBlogs();
 
     public List<dashboardModel> findFav(String userName);
 
@@ -22,4 +23,12 @@ public interface dashboardServiceInterface {
     public dashboardModel findByV(String vId);
 
     public dashboardModel removeFav(String userName, String vId);
+
+    public String delBlogs(String blogId);
+
+    public String delComm(String blogId,String commId);
+
+    public String approveBlog(String vId,String response);
+
+    public List<dashboardModel> showPendingBlogs();
 }

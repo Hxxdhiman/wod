@@ -1,0 +1,36 @@
+<div class="background-image" style="background-image: url(./assets/db.jpg)">
+    <div class="card">
+        <img src="{{'data:image/jpg;base64,' +Blogs.img}}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="card-text"><strong>Author: </strong>{{ Blogs.author }}</p>
+          <p class="card-text"><strong>Title: </strong> {{ Blogs.title }}</p>
+          <p class="card-text"><strong>Content: </strong> {{ Blogs.content }}</p>
+          <p class="card-text"><strong>PublishedAt: </strong> {{ Blogs.dob}}</p>
+    </div>
+    
+    <div>
+      <div>
+    
+      <ng-container *ngFor="let com of comm" >
+        <div class="news-container">
+            <div class="news-card">
+                <div class="card-body">
+                <p class="card-text">
+                  <b > {{com.commentUsername}} :: </b>
+                  <b >{{com.comment}}</b>
+                  <button type="submit" class="btn" (click)="remComm(com)">Remove</button>
+                </p>
+            </div>
+        </div> 
+      </div> 
+      </ng-container>
+    </div>
+      <form class="comment-card" #blogForm="ngForm">
+                <p style="color: black;" name="commentUsername" [(ngModel)]="comme.commentUsername"></p>
+                <div>
+                <br>
+                <button class="btn" (click)="routerIt()">Go Back</button>
+                </div> 
+      </form>
+    </div>
+    

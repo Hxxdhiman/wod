@@ -1,0 +1,123 @@
+/* Background styles */
+.background-image {
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Card styles */
+  .card {
+    width: 90%;
+    max-width: 560px;
+    margin: auto;
+    background-color: aliceblue;
+    /* Light gray background */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    overflow: hidden;
+  }
+  
+  /* Card image styles */
+  .card-img-top {
+    width: 100%;
+    height: a1;
+    display: block;
+    border-radius: 10px 10px 0 0; /* Rounded corners on top */
+  }
+  
+  /* Card body styles */
+  .card-body {
+    padding: 20px;
+  }
+  
+  /* Card text styles */
+  .card-text {
+    margin: 0;
+  }
+  
+  /* Button container styles */
+  .button-container {
+    background-color: aliceblue;
+    margin-top: 20px;
+  }
+  
+  /* News container styles */
+  .news-container {
+    background-color: aliceblue;
+    margin-top: 20px;
+  }
+  
+  /* News card styles */
+  .news-card {
+    background-color: aliceblue;
+    /* White background */
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    margin-bottom: 10px;
+  }
+  
+  /* Comment card styles */
+  .comment-card {
+    background-color: aliceblue;
+    margin-top: 20px;
+  }
+  
+  .comment-card label {
+    display: block;
+    font-weight: bold;
+  }
+  
+  .comment-card input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .comment-card button {
+    padding: 10px 20px;
+    background-color: #007bff; /* Blue button */
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition */
+  }
+  
+  .comment-card button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+  
+  /* Go back button styles */
+  .go-back button {
+    background-color: #dc3545; /* Red button */
+  }
+  
+  .go-back button:hover {
+    background-color: #c82333; /* Darker red on hover */
+  }
+  
+  /* General button styles */
+  .btn {
+    padding: 10px 20px;
+    background-color: #28a745; /* Green button */
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition */
+  }
+  
+  .btn:hover {
+    background-color: #218838; /* Darker green on hover */
+  }
+  .btn{
+    margin: 5px;
+  }
+  .enter{
+    margin-left:5px;
+  }

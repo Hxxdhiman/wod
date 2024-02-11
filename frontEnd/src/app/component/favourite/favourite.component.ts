@@ -28,6 +28,10 @@ export class FavouriteComponent {
       }
     )
   }
+  routerIt()
+  {
+    this.router.navigate(["/dashboard"])
+  }
   removeFav(id:any)
   {
     this.dashSer.removeFav(this.userName,id).subscribe(

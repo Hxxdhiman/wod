@@ -11,8 +11,4 @@ public class DashboardApplication {
 		SpringApplication.run(DashboardApplication.class, args);
 		System.out.println("DashBoard is running");
 	}
-<<<<<<< HEAD
-=======
-
->>>>>>> b09b0f19566106c269fe83ef5a971e4e86357778
 }

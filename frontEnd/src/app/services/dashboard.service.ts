@@ -23,6 +23,13 @@ export class dashboardService {
   {
     return this.http.post(`${this.baseUrl}/putBlogs`,blog)
   }
+  showPending()
+  {
+    const headers=new HttpHeaders({
+      'Content-Type': 'application/json',
+    });
+    return this.http.get<blogger[]>(`${this.baseUrl}/showPending`,{headers})
+  }
   getBlogs()
   {
     const headers=new HttpHeaders({
@@ -41,6 +48,18 @@ export class dashboardService {
   removeFav(userName:any,vlogsId:any)
   {
     return this.http.get(`${this.baseUrl}/removeFav/${userName}/${vlogsId}`)
+  }
+  removeBlog(vlogsId:any)
+  {
+    return this.http.delete(`${this.baseUrl}/deleteBlogs/${vlogsId}`)
+  }
+  remComments(blogId:string,commentId:string)
+  {
+    return this.http.delete(`${this.baseUrl}/deleteComment/${blogId}/${commentId}`)
+  }
+  adminBlogRes(blogId:string,response:string)
+  {
+    return this.http.get(`${this.baseUrl}/accept/${blogId}/${response}`);
   }
 }
 

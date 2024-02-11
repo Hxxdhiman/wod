@@ -30,7 +30,19 @@ export class HeaderComponent implements OnInit {
   }
   isloggedin()
   {
-    return this.loggedIn=this.logSer.isLoggedIn()
+    if (this.logSer.isLoggedIn() && !this.logSer.findAdminn())
+    {
+      return true;
+    }
+    return false;
+  }
+  isAdmin()
+  {
+    return this.logSer.findAdminn()
+  }
+  islogin()
+  {
+    return this.logSer.isLoggedIn();
   }
   gotodashboard()
   {

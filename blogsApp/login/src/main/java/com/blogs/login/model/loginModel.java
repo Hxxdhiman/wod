@@ -31,13 +31,20 @@ public class loginModel {
     }
 
     @Override
-    public String toString() {
-        return super.toString();
+    protected void finalize() throws Throwable {
+        super.finalize();
     }
 
     @Override
-    protected void finalize() throws Throwable {
-        super.finalize();
+    public String toString() {
+        return "loginModel{" +
+                "username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", cnfrmPassword='" + cnfrmPassword + '\'' +
+                ", fName='" + fName + '\'' +
+                ", lName='" + lName + '\'' +
+                ", email='" + email + '\'' +
+                '}';
     }
 
     public loginModel(String username, String password, String cnfrmPassword, String fName, String lName, String email) {

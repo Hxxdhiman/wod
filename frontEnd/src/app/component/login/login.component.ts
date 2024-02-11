@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { loginService } from '../../services/login.service';
+import { elementAt } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -36,7 +37,16 @@ export class LoginComponent {
           console.log(response.token)
           this.logSer.storeUsername(this.credentials.username)
           this.logSer.loginUser(response.token)
-          this.router.navigate(["/dashboard"])
+          if(response.admin=="true")
+          {
+            this.router.navigate(["/admin"])
+            this.logSer.isAdmin(response.admin)
+            console.log(response.admin)
+          }
+          else
+          {
+            this.router.navigate(["/dashboard"])
+          }
         },
         error=>{
           console.log(error)

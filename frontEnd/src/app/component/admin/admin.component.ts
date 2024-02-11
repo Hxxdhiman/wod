@@ -8,10 +8,10 @@ import { dashboardService } from '../../services/dashboard.service';
   selector: 'app-dashboard',
   standalone: true,
   imports: [CommonModule, RouterModule],
-  templateUrl: './dashboard.component.html',
-  styleUrl: './dashboard.component.css'
+  templateUrl: './admin.component.html',
+  styleUrl: './admin.component.css'
 })
-export class DashboardComponent {
+export class AdminComponent {
   
   constructor(private dashSer: dashboardService) {}
   Blogs:blogger[]=[];
@@ -40,5 +40,17 @@ export class DashboardComponent {
         console.log(error)
       }
     ) 
+  }
+  removeBlog(BlogId:any)
+  {
+    this.dashSer.removeBlog(BlogId).subscribe(
+      user=>{
+        console.log(user)
+        alert('added to read later')
+      },
+      error=>{
+        console.log(error)
+      }
+    )
   }
 }

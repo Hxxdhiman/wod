@@ -7,6 +7,10 @@ import { LoginComponent } from './component/login/login.component';
 import { BlogsModuleComponent } from './component/header/blogs-module/blogs-module.component';
 import { RegistrationComponent } from './component/registration/registration.component';
 import { authLogGuard } from './services/auth-log.guard';
+import { AdminComponent } from './component/admin/admin.component';
+import { adminLoginGuard } from './services/admin-login.guard';
+import { CommentControlComponent } from './component/admin/comment-control/comment-control.component';
+import { BlogapprovalComponent } from './component/admin/blogapproval/blogapproval.component';
 
 
 export const routes: Routes = [
@@ -15,7 +19,12 @@ export const routes: Routes = [
     {path:'blogs-module', component: BlogsModuleComponent,canActivate:[authLogGuard]},
     {path:'card/:id', component: CardComponent},
     {path:'comments/:id', component: CommentsComponent},
+    {path:'comment-control/:id', component: CommentControlComponent,canActivate:[adminLoginGuard]},
     {path:'favourite', component: FavouriteComponent,canActivate:[authLogGuard]},
     {path:'login',component:LoginComponent},
+    {path:'admin',component:AdminComponent,canActivate:[adminLoginGuard]},
+    {path:'register',component:RegistrationComponent},
+    {path:'blog-approval',component:BlogapprovalComponent,canActivate:[adminLoginGuard]},
     {path:'register',component:RegistrationComponent}
+
 ];

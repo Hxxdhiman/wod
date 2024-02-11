@@ -1,54 +1,95 @@
-
-*{
-  border-radius: 10px;
+.news-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
-.container {
-    margin: 10px 10px;
-    padding: 10px 10px;
-  
-    border-radius: 5px;
-    text-align: center;
-  }
-  .news-container {
-    display: inline-flex;
-    color: black;
-  }
 
+/* Individual news card */
+.news-card {
+  width: 300px;
+  margin: 20px;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: aliceblue;
+
+}
+.heading{
+  text-align: center;
+  color: white;
+}
+
+/* Image inside the card */
+.card-img {
+  width: 100%;
+  border-radius: 8px;
+  height: 200px; /* Set a fixed height for all images */
+  object-fit: cover; /* Ensure the image covers the entire space */
+}
+
+/* Card body styles */
+.card-body {
+  padding: 10px 0;
+}
+
+/* Title of the blog */
+.card-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333333;
+}
+
+/* Content of the blog */
+.card-content {
+  font-size: 14px;
+  color: #555555;
+}
+
+/* Button container */
+.news-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+/* Buttons for details and removal */
+.btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  background-color: rgb(87, 158, 20);
+}
+
+/* Details button style */
+.btn-detail {
+  background-color: #5f7e9d;
+  color: #ffffff;
+}
+
+/* Remove button style */
+.btn-remove {
+  background-color: #c54e5a;
+  color: #ffffff;
+}
+
+/* Hover effect for buttons */
+.btn:hover {
+  opacity: 0.8;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
   .news-card {
-    width: 300px;
-    height: auto;
-    margin: 10px 10px;
-    color: black;
-    background-color: aliceblue;
+    width: 90%;
   }
-  
-  .course-card {
-    width: 220px;
-    height: 320px;
-    margin: 10px 10px;
-    background-color: #484f4f;
-  }
-
-  .news-buttons {
-    display: flex;
-  }
-  .btn {
-    width: 140px;
-    height: 30px;
-    border: none;
-    margin: 5px 3px;
-  }
-
-  .btn-read {
-    background-color: #ec7063;
-  }
-  .btn-detail {
-    background-color: rgb(97, 191, 191);
-  }
-  .btn-remove {
-    background-color: rgb(201, 131, 131);
-  }
-  .btn-comment{
-    background-color: rgb(217, 170, 52);
-    border-radius: 5px;
-  }
+}
+.background-image {
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Ensure the background image covers the entire viewport height */
+}

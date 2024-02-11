@@ -31,7 +31,7 @@ public class loginService implements loginInterfaceService{
 
     }
 
-    public Map<String, String> getToken(loginModel model)
+    public Map<String, String> getToken(loginModel model,String isAdmin)
     {
         String jwtToken= Jwts.builder().setSubject(repo.findByUsername(model.getUsername()).getUsername())
                 .setIssuedAt(new Date(0))
@@ -48,6 +48,11 @@ public class loginService implements loginInterfaceService{
             jToken.put("error",demp);
         }
         jToken.put("token", jwtToken);
+        jToken.put("admin","false");
+        if(isAdmin.equals("true"))
+        {
+            jToken.put("admin","true");
+        }
         return jToken;
     }
 

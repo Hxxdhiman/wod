@@ -6,15 +6,9 @@ import com.blogs.dashboard.repository.commentRepo;
 import com.blogs.dashboard.repository.dashboardRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.multipart.MultipartFile;
 
-import java.io.File;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 @Service
 public class dashboardService implements dashboardServiceInterface {
@@ -32,6 +26,19 @@ public class dashboardService implements dashboardServiceInterface {
 
     @Override
     public List<dashboardModel> showBlogs() {
+        List<dashboardModel> blogs=new ArrayList<dashboardModel>();
+        List<dashboardModel> temp=repo.findAll();
+        for(dashboardModel model:temp)
+        {
+            if(model.isApproved().equals("true"))
+            {
+                blogs.add(model);
+            }
+        }
+        return blogs;
+    }
+    public List<dashboardModel> showAdminBlogs()
+    {
         return repo.findAll();
     }
 
@@ -72,6 +79,58 @@ public class dashboardService implements dashboardServiceInterface {
                 }
         }
         return favourite;
+    }
+    public String delBlogs(String blogId) {
+        dashboardModel model = repo.findByVId(blogId);
+        repo.delete(model);
+        List<comment> coms = cRepo.findByVId(blogId);
+        for (comment com : coms) {
+            cRepo.delete(com);
+        }
+        return "Deleted";
+    }
+    @Override
+    public String delComm(String blogId,String commId) {
+        List<comment> coms=cRepo.findByVId(blogId);
+        for(comment com:coms)
+        {
+            if(com.getCommentId().equals((commId)))
+            {
+                cRepo.delete(com);
+                return "Deleted";
+            }
+        }
+        return "Not found";
+    }
+
+    @Override
+    public String approveBlog(String vId,String response) {
+        if(response.equals("true")) {
+            dashboardModel model=repo.findByVId(vId);
+            model.setApproved("true");
+            repo.save(model);
+            return "Approved";
+        }
+        else if(response.equals("false")){
+            dashboardModel model=repo.findByVId(vId);
+            repo.delete(model);
+            return "Declined";
+        }
+        return "Can't say";
+    }
+
+    @Override
+    public List<dashboardModel> showPendingBlogs() {
+        List<dashboardModel> blogs=new ArrayList<dashboardModel>();
+        List<dashboardModel> temp=repo.findAll();
+        for(dashboardModel model:temp)
+        {
+            if(model.isApproved().equals("false"))
+            {
+                blogs.add(model);
+            }
+        }
+        return blogs;
     }
 
     @Override
